@@ -1,0 +1,15 @@
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/bin/Debug/net6.0/Console
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/bin/Debug/net6.0/Console.deps.json
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/bin/Debug/net6.0/Console.runtimeconfig.json
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/bin/Debug/net6.0/Console.dll
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/bin/Debug/net6.0/ref/Console.dll
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/bin/Debug/net6.0/Console.pdb
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.csproj.AssemblyReference.cache
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.GeneratedMSBuildEditorConfig.editorconfig
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.AssemblyInfoInputs.cache
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.AssemblyInfo.cs
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.csproj.CoreCompileInputs.cache
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.dll
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/ref/Console.dll
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.pdb
+/home/leo/Dev/C#/Aceleração/teste-voale/src/Console/obj/Debug/net6.0/Console.genruntimeconfig.cache
