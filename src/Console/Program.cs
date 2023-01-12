@@ -16,6 +16,9 @@ public class Program
         Console.WriteLine("\n");
         EmailHandler.Message(Polygon);
 
+        Feedback();
+
+
     }
 
     private void Instructions()
@@ -27,7 +30,8 @@ public class Program
 
         bool isValid = char.TryParse(response, out char character);
 
-        while (!isValid || !Char.IsLetter(character) || character == 'A' || character == 'B')
+
+        while (!isValid || !Char.IsLetter(character) || Char.ToUpper(character) == 'A' || Char.ToUpper(character) == 'B')
         {
             Console.WriteLine("Caracter inválido");
             Console.WriteLine("Insira uma letra de C a Z:");
@@ -35,5 +39,22 @@ public class Program
             isValid = char.TryParse(response, out character);
         }
         _character = Char.ToUpper(character);
+    }
+    private static void Feedback()
+    {
+        Console.WriteLine("Gostaria de nos enviar algum feedback ou sugestão? [Y/n]");
+
+        var response = Helpers.Confirmation();
+
+        if (response)
+        {
+            var feedback = Console.ReadLine() ?? "";
+
+            if (!string.IsNullOrEmpty(feedback) || !string.IsNullOrWhiteSpace(feedback))
+            {
+                EmailHandler.Send("leonardocoel98@gmail.com", feedback);
+            }
+        }
+
     }
 }
