@@ -10,7 +10,7 @@ namespace ConsoleProgram;
 public static class EmailHandler
 {
 
-    private static void Send(string email, string text)
+    public static void Send(string email, string text)
     {
         var message = new MimeMessage();
 
@@ -50,10 +50,10 @@ public static class EmailHandler
     public static void Message(string shape)
     {
         Console.WriteLine("Gostaria de salvar o resultado e enviar para o seu e-mail? [Y/n]");
-        var response = Console.ReadLine() ?? "";
-        var affirmative = new List<string>() { "y", "yes", "s", "sim" };
 
-        if (affirmative.Contains(response.ToLower()))
+        bool response = Helpers.Confirmation();
+
+        if (response)
         {
             Console.WriteLine("Insira seu e-mail:");
             var email = Console.ReadLine() ?? "";

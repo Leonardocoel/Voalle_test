@@ -16,4 +16,12 @@ public static class Helpers
         Array.Reverse(alpha);
         return new string(alpha);
     }
+
+    public static bool Confirmation()
+    {
+        var response = Console.ReadLine() ?? "";
+        var affirmative = new List<string>() { "y", "yes", "s", "sim" };
+
+        return affirmative.Contains(response.ToLower());
+    }
 }
