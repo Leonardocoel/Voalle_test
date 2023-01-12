@@ -12,7 +12,7 @@ public class TestEmailHandler
     [InlineData("user@email", false)]
     [InlineData("useremail.com", false)]
 
-    public void TestDiamond(string email, bool expected)
+    public void TestIsValidEmail(string email, bool expected)
     {
         var result = EmailHandler.IsValidEmail(email);
 
