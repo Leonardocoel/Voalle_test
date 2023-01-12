@@ -10,16 +10,16 @@ namespace ConsoleProgram;
 public static class EmailHandler
 {
 
-    private static void Send(string email, string shape)
+    private static void Send(string email, string text)
     {
         var message = new MimeMessage();
 
-        message.From.Add(new MailboxAddress("Leonardo Coelho", "coelho9.8@hotmail.com"));//! Alterar 
+        message.From.Add(new MailboxAddress("Leonardo Coelho", "leonardocoel98@gmail.com"));//! Alterar 
         message.To.Add(MailboxAddress.Parse(email));
         message.Subject = "Here is the result of your request";
         message.Body = new TextPart("plain")
         {
-            Text = $"\n \n {shape} \n \n"
+            Text = $"\n \n {text} \n \n"
         };
 
         using var client = new SmtpClient();
