@@ -2,9 +2,9 @@ using Xunit;
 
 namespace Console.Test;
 
-public class UnitTest1
+public class HelpersTest
 {
-    [Fact]
+    [Theory]
     public void Test1()
     {
 
