@@ -44,6 +44,29 @@ public static class Polygons
 
         return strBuilder.ToString();
     }
+
+    public static string Square(char character)
+    {
+        var strBuilder = new StringBuilder("");
+
+        var alpha = Helpers.GetCharacters(character);
+        var alphaInverted = Helpers.InvertString(alpha)[1..^1];
+        var squareSide = String.Concat(alpha, alphaInverted);
+        var squareSize = squareSide.Length + 1;
+
+        strBuilder.Insert(0, " A", squareSize);
+        strBuilder.Append('\n');
+
+        var squareSideSliced = squareSide[1..];
+        foreach (var (c, i) in squareSideSliced.Select((c, i) => (c.ToString(), i)))
+        {
+            var spacing = squareSide.Length * 2;
+
+            strBuilder.Append(" " + c + c.PadLeft(spacing) + "\n");
+        }
+
+        strBuilder.Insert(strBuilder.Length, " A", squareSize);
+
+        return strBuilder.ToString();
+    }
 }
-
-

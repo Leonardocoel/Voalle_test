@@ -10,7 +10,7 @@ public class Program
         var Program = new Program();
         Program.Instructions();
 
-        var Polygon = Polygons.Diamond(Program._character);
+        var Polygon = Polygons.Square(Program._character);
         Console.WriteLine("\n");
         Console.WriteLine(Polygon);
         Console.WriteLine("\n");
