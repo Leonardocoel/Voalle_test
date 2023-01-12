@@ -14,7 +14,7 @@ public class Program
         Console.WriteLine("\n");
         Console.WriteLine(Polygon);
         Console.WriteLine("\n");
-        EmailHandler.Message();
+        EmailHandler.Message(Polygon);
 
     }
 
