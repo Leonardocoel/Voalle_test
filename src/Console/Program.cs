@@ -6,16 +6,16 @@ namespace ConsoleProgram;
 public class Program
 {
 
-    private char _character;
+    public char Character { get; private set; }
     private enum Polygons { Diamond = 1, Square }
 
-    private string _polygon = "Diamond";
+    public string Polygon { get; private set; } = "Diamond";
     public static void Main()
     {
         var Program = new Program();
 
         Program.Instructions();
-        var (character, polygon) = (Program._character, Program._polygon);
+        var (character, polygon) = (Program.Character, Program.Polygon);
 
         Type type = typeof(ConsoleProgram.Polygons);
         MethodInfo method = type.GetMethod(polygon);
@@ -33,7 +33,7 @@ public class Program
 
     }
 
-    private void Instructions()
+    public void Instructions()
     {
         Console.WriteLine("Olá usuário!");
 
@@ -45,7 +45,7 @@ public class Program
 
         if (!isInt || choice != 1 && choice != 2) choice = 1;
 
-        _polygon = ((Polygons)choice).ToString();
+        Polygon = ((Polygons)choice).ToString();
 
         Console.WriteLine("Insira uma letra de C a Z:");
 
@@ -61,7 +61,7 @@ public class Program
             response = Console.ReadLine();
             isValid = char.TryParse(response, out character);
         }
-        _character = Char.ToUpper(character);
+        Character = Char.ToUpper(character);
     }
     private static void Feedback()
     {
