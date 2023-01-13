@@ -2,7 +2,7 @@ using Xunit;
 using FluentAssertions;
 using ConsoleProgram;
 
-namespace Console.Test;
+namespace ConsoleProgram.Test;
 
 public class HelpersTest
 {
@@ -14,7 +14,6 @@ public class HelpersTest
     public void TestGetCharacters(char character, string expected)
     {
         var result = Helpers.GetCharacters(character);
-
         result.Should().Be(expected);
     }
 

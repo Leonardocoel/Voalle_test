@@ -2,7 +2,7 @@ using Xunit;
 using FluentAssertions;
 using ConsoleProgram;
 
-namespace Console.Test;
+namespace ConsoleProgram.Test;
 
 public class PolygonsTest
 {
