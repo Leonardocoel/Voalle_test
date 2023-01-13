@@ -24,10 +24,13 @@ public class Program
 
 
         Console.WriteLine(Polygon);
-        EmailHandler.Message(Polygon);
 
-        if (polygon == "Square") Console.WriteLine("Exporting pdf for square is disabled due to bugs");
-        else PdfHandler.Message(Polygon);
+        if (polygon == "Square") Console.WriteLine("Exporting for square is disabled due to bugs");
+        else
+        {
+            EmailHandler.Message(Polygon);
+            PdfHandler.Message(Polygon);
+        }
 
         Feedback();
 
