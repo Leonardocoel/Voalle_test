@@ -1,29 +1,48 @@
-﻿namespace ConsoleProgram;
+﻿using System;
+using System.Reflection;
+
+namespace ConsoleProgram;
 
 public class Program
 {
 
     private char _character;
+    private enum Polygons { Diamond = 1, Square }
 
+    private string _polygon = "Diamond";
     public static void Main()
     {
         var Program = new Program();
+
         Program.Instructions();
+        var (character, polygon) = (Program._character, Program._polygon);
 
-        var Polygon = Polygons.Square(Program._character);
-        Console.WriteLine("\n");
+        Type type = typeof(ConsoleProgram.Polygons);
+        MethodInfo method = type.GetMethod(polygon);
+        var obj = new object[] { character };
+        var Polygon = (string)method.Invoke(null, obj);
+
+
         Console.WriteLine(Polygon);
-        Console.WriteLine("\n");
         EmailHandler.Message(Polygon);
-
         Feedback();
-
 
     }
 
     private void Instructions()
     {
         Console.WriteLine("Olá usuário!");
+
+        Console.WriteLine("Escolha o polígono a ser impresso:");
+        Console.WriteLine("1 - Diamante/Losango");
+        Console.WriteLine("2 - Quadrado");
+
+        var isInt = int.TryParse(Console.ReadLine(), out int choice);
+
+        if (!isInt || choice != 1 && choice != 2) choice = 1;
+
+        _polygon = ((Polygons)choice).ToString();
+
         Console.WriteLine("Insira uma letra de C a Z:");
 
         var response = Console.ReadLine();
@@ -48,6 +67,7 @@ public class Program
 
         if (response)
         {
+            Console.WriteLine("Digite abaixo seu feedback:");
             var feedback = Console.ReadLine() ?? "";
 
             if (!string.IsNullOrEmpty(feedback) || !string.IsNullOrWhiteSpace(feedback))
