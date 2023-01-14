@@ -18,9 +18,9 @@ public class Program
         var (character, polygon) = (Program.Character, Program.Polygon);
 
         Type type = typeof(ConsoleProgram.Polygons);
-        MethodInfo method = type.GetMethod(polygon);
+        MethodInfo method = type.GetMethod(polygon)!;
         var obj = new object[] { character };
-        var Polygon = (string)method.Invoke(null, obj);
+        var Polygon = (string)method.Invoke(null, obj)!;
 
 
         Console.WriteLine(Polygon);
