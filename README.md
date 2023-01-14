@@ -54,6 +54,13 @@ Teste técnico realizado para o grupo Voalle.
   dotnet restore
   ```
 
+- (Optional) for the email to work make the following changes in the EmailHandler.cs file
+
+  ```text
+  . Change sender credentials to a valid one
+  . Change the connection parameters according to the email provider (line 35) 
+  ```
+
 - Run the app
 
   ```bash
