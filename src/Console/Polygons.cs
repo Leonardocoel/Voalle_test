@@ -37,57 +37,31 @@ public static class Polygons
         return strBuilder.ToString();
     }
 
-    public static string Square(char character)
+    public static string Square(char letter)
     {
         var strBuilder = new StringBuilder("");
 
-        var alpha = Helpers.GetCharacters(character);
-        var alphaInverted = Helpers.InvertString(alpha)[1..^1];
-        var squareSide = String.Concat(alpha, alphaInverted);
-        var squareSize = squareSide.Length + 1;
+        var alpha = Helpers.GetCharacters(letter);
+        var alphaSelected = alpha[1..].Select((c, i) => (c, i));
 
-        strBuilder.Insert(0, " A", squareSize);
-        strBuilder.Append('\n');
+        int LineACount = alpha.Length * 2 - 2;// 2 => menos E , menos A
+        var LineA = new StringBuilder("A");
+        LineA.Insert(1, " A", LineACount);
 
-        var squareSideSliced = squareSide[1..];
-        foreach (var (c, i) in squareSideSliced.Select((c, i) => (c.ToString(), i)))
+        strBuilder.Insert(0, LineA.ToString() + "\n", 2);
+
+        foreach (var (character, i) in alphaSelected)
         {
-            var spacing = squareSide.Length * 2;
+            int middleSpacingCount = LineACount * 2 - 1;
+            string middleSpacing = new(' ', middleSpacingCount);
 
-            strBuilder.Append(" " + c + c.PadLeft(spacing) + "\n");
+            var insertIndex = strBuilder.Length / 2;
+            var squareLine = character + middleSpacing + character + '\n';
+            int repeatN = (character == letter) ? 1 : 2;
+
+            strBuilder.Insert(insertIndex, squareLine, repeatN);
         }
-
-        strBuilder.Insert(strBuilder.Length, " A", squareSize);
 
         return strBuilder.ToString();
     }
 }
-
-// var alphaInverted = Helpers.InvertString(alpha)[1..^1];
-// int lenght = alpha.Length;
-
-//         strBuilder.Append("A".PadLeft(lenght + 1) + "\n");
-//         strBuilder.Append("B".PadLeft(lenght - 1) + "   B\n");//min 1 space in B
-
-
-//         var alphaSliced = alpha[2..];
-//         foreach (var (c, i) in alphaSliced.Select((c, i) => (c.ToString(), i)))
-//         {
-//             var left = alphaSliced.Length - i;
-//             var initalSpacing = 6; // min 4
-//             var middle = initalSpacing + (2 * i);
-
-
-//             strBuilder.Append(c.PadLeft(left) + c.PadLeft(middle) + "\n");
-//         }
-
-//         foreach (var (c, i) in alphaInverted.Select((c, i) => (c.ToString(), i)))
-//         {
-//             var left = 2 + i;
-//             var initalSpacing = 2;//min 0
-//             var middle = (alphaInverted.Length - i) * 2 + initalSpacing;
-
-//             strBuilder.Append(c.PadLeft(left) + c.PadLeft(middle) + "\n");
-//         }
-
-//         strBuilder.Append("A".PadLeft(lenght + 1));
